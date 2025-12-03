@@ -1,4 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
+import './App.css'; 
 
 export default function Navigation() {
   const location = useLocation();
