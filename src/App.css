@@ -26,37 +26,79 @@ body {
   flex-direction: column;
 }
 
-/* Навигация */
+/* Navigation.css */
 .navigation {
   background: var(--card-bg);
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  padding: 1rem 2rem;
+  padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap; /* ← позволяет элементам переноситься */
+  gap: 0.5rem 1rem;
+  width: 100%;
 }
 
+.nav-brand a {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--primary);
+  font-size: 1.1rem;
+  white-space: nowrap; /* ← не разрывается на 2 строки */
+}
+
+/* Список ссылок */
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
   margin: 0;
   padding: 0;
+  flex-wrap: wrap; /* ← перенос при нехватке места */
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-links li {
+  margin: 0;
 }
 
 .nav-links a {
   text-decoration: none;
   color: var(--primary);
   font-weight: 600;
-  padding: 0.5rem 1rem;
+  padding: 0.4rem 0.8rem;
   border-radius: 20px;
   transition: all 0.2s;
+  white-space: nowrap; /* ← важно! */
+  text-align: center;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
   background: var(--accent);
   color: white;
+}
+
+/* Мобильные устройства — вертикальное меню при ширине < 600px */
+@media (max-width: 599px) {
+  .navigation {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.8rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.6rem;
+  }
+
+  .nav-links a {
+    width: 100%;
+    max-width: none;
+    padding: 0.6rem;
+  }
 }
 
 /* Контент */
