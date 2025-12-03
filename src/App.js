@@ -5,6 +5,7 @@ import Home from './Home';
 import TechnologyList from './TechnologyList';
 import AddTechnology from './AddTechnology';
 import './App.css';
+import PetsPage from './PetsPage';
 
 function App() {
   const [technologies, setTechnologies] = useState([]);
@@ -56,11 +57,14 @@ function App() {
             <Route 
               path="/technologies" 
               element={<TechnologyList technologies={technologies} />} 
-            />
+            />            
+            <Route path="/pets" element={<PetsPage />} />
+            
             <Route 
               path="/add" 
               element={<AddTechnology onAdd={handleAddTechnology} />} 
             />
+
           </Routes>
         </main>
         <footer className="app-footer">
