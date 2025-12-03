@@ -12,6 +12,7 @@ export default function Navigation() {
       <ul className="nav-links">
         <li><Link className={isActive('/') ? 'active' : ''} to="/">Главная</Link></li>
         <li><Link className={isActive('/technologies') ? 'active' : ''} to="/technologies">Все технологии</Link></li>
+        <li><Link to="/pets">Питомцы</Link></li>
         <li><Link className={isActive('/add') ? 'active' : ''} to="/add">+ Добавить</Link></li>
       </ul>
     </nav>
